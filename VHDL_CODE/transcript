@@ -1,0 +1,55 @@
+# Compile of Integration.vhd was successful.
+# Compile of Integration_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.integration_tb
+# vsim -gui work.integration_tb 
+# Start time: 11:31:38 on Dec 04,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integration_tb(behavioral)
+# Loading work.integration(behavioral)
+# ** Warning: (vsim-3473) Component instance "ERR_FF : err_register" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /integration_tb/UUT File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Integration.vhd
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/integration_tb/*
+vsim -gui work.integration_tb
+# End time: 11:31:56 on Dec 04,2024, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 3
+# vsim -gui work.integration_tb 
+# Start time: 11:31:56 on Dec 04,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integration_tb(behavioral)
+# Loading work.integration(behavioral)
+# ** Warning: (vsim-3473) Component instance "ERR_FF : err_register" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /integration_tb/UUT File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Integration.vhd
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/integration_tb/*
+run -all
+# ** Note: === Test Case: Normal Integration ===
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Expected value: 48
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Actual value: 3072
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Error input: 16
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Sum input: 32
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Integration enabled: '1'
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Ki numerator: 1
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Ki denominator: 1
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Note: Time divider: 1
+#    Time: 30 ns  Iteration: 0  Instance: /integration_tb
+# ** Failure: Test Case 1 (Normal Integration) failed!
+# Expected: 48
+# Got: 3072
+#    Time: 30 ns  Iteration: 0  Process: /integration_tb/test_proc File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd
+# Break in Process test_proc at C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd line 96
