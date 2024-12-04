@@ -7,3 +7,5 @@
 # Compile of AnalogConverter.vhd failed with 2 errors.
 # Compile of AnalogConverter.vhd failed with 1 errors.
 # Compile of AnalogConverter.vhd was successful.
+# Compile of PID_Controller.vhd failed with 3 errors.
+# Compile of PID_Controller.vhd was successful with warnings.
