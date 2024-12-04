@@ -1,6 +1,3 @@
-Here's an enhanced version of your project description in English, with more detail:
-
----
 
 # ✈️ Flight Control Unit (FCU) - Final Project in Digital System Design
 
