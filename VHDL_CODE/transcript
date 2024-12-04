@@ -10,3 +10,5 @@
 # Compile of PID_Controller.vhd failed with 3 errors.
 # Compile of PID_Controller.vhd was successful with warnings.
 # Compile of PID_Controller.vhd was successful with warnings.
+# Compile of Integration.vhd was successful.
+# Compile of PID_Controller.vhd was successful with warnings.
