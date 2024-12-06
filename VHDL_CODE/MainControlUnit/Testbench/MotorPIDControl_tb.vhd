@@ -7,7 +7,7 @@ END MotorPIDControl_tb;
 
 ARCHITECTURE Behavioral OF MotorPIDControl_tb IS
     -- Component Declaration
-    COMPONENT MotorPIDControl
+    COMPONENT MotorPIDControl IS
         GENERIC (
             data_width : INTEGER := 32;
             internal_width : INTEGER := 16
@@ -35,60 +35,50 @@ ARCHITECTURE Behavioral OF MotorPIDControl_tb IS
             height_kp, height_ki, height_kd : IN STD_LOGIC_VECTOR(internal_width-1 DOWNTO 0);
             height_setpoint, height_actual : IN STD_LOGIC_VECTOR(data_width-1 DOWNTO 0);
             height_output : OUT STD_LOGIC_VECTOR(data_width-1 DOWNTO 0);
-            
             values_ready : OUT STD_LOGIC
         );
     END COMPONENT;
 
-    -- Constants
-    CONSTANT CLK_PERIOD : TIME := 10 ns;
-    CONSTANT DATA_WIDTH : INTEGER := 32;
-    CONSTANT INTERNAL_WIDTH : INTEGER := 16;
-
     -- Test Signals
-    SIGNAL clock : STD_LOGIC := '0';
-    SIGNAL reset : STD_LOGIC := '0';
-    
-    -- PID Constants
-    SIGNAL roll_kp, roll_ki, roll_kd : STD_LOGIC_VECTOR(15 DOWNTO 0) := x"0014"; -- 20 in hex
-    SIGNAL pitch_kp, pitch_ki, pitch_kd : STD_LOGIC_VECTOR(15 DOWNTO 0) := x"0014";
-    SIGNAL yaw_kp, yaw_ki, yaw_kd : STD_LOGIC_VECTOR(15 DOWNTO 0) := x"0014";
-    SIGNAL height_kp, height_ki, height_kd : STD_LOGIC_VECTOR(15 DOWNTO 0) := x"0014";
-    
-    -- Setpoints and Actual Values
-    SIGNAL roll_setpoint, roll_actual : STD_LOGIC_VECTOR(31 DOWNTO 0) := (others => '0');
-    SIGNAL pitch_setpoint, pitch_actual : STD_LOGIC_VECTOR(31 DOWNTO 0) := (others => '0');
-    SIGNAL yaw_setpoint, yaw_actual : STD_LOGIC_VECTOR(31 DOWNTO 0) := (others => '0');
-    SIGNAL height_setpoint, height_actual : STD_LOGIC_VECTOR(31 DOWNTO 0) := (others => '0');
-    
-    -- Outputs
-    SIGNAL roll_output : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL pitch_output : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL yaw_output : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL height_output : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL values_ready : STD_LOGIC;
+    SIGNAL clock : std_logic := '0';
+    SIGNAL reset : std_logic := '0';
+    SIGNAL roll_kp, roll_ki, roll_kd : std_logic_vector(15 DOWNTO 0) := (others => '0');
+    SIGNAL roll_setpoint, roll_actual : std_logic_vector(31 DOWNTO 0) := (others => '0');
+    SIGNAL roll_output : std_logic_vector(31 DOWNTO 0);
+    SIGNAL pitch_kp, pitch_ki, pitch_kd : std_logic_vector(15 DOWNTO 0) := (others => '0');
+    SIGNAL pitch_setpoint, pitch_actual : std_logic_vector(31 DOWNTO 0) := (others => '0');
+    SIGNAL pitch_output : std_logic_vector(31 DOWNTO 0);
+    SIGNAL yaw_kp, yaw_ki, yaw_kd : std_logic_vector(15 DOWNTO 0) := (others => '0');
+    SIGNAL yaw_setpoint, yaw_actual : std_logic_vector(31 DOWNTO 0) := (others => '0');
+    SIGNAL yaw_output : std_logic_vector(31 DOWNTO 0);
+    SIGNAL height_kp, height_ki, height_kd : std_logic_vector(15 DOWNTO 0) := (others => '0');
+    SIGNAL height_setpoint, height_actual : std_logic_vector(31 DOWNTO 0) := (others => '0');
+    SIGNAL height_output : std_logic_vector(31 DOWNTO 0);
+    SIGNAL values_ready : std_logic;
 
-    -- Procedure for printing test results
+    CONSTANT CLK_PERIOD : time := 10 ns;
+
+    -- Helper procedure
     PROCEDURE print_height_test(
-        test_name : STRING;
-        setpoint : INTEGER;
-        actual : INTEGER;
-        output : STD_LOGIC_VECTOR(31 DOWNTO 0)
+        test_name : in string;
+        setpoint : in integer;
+        actual : in integer;
+        output : std_logic_vector(31 DOWNTO 0)
     ) IS
     BEGIN
-        REPORT "=== Test Case: " & test_name & " ===" SEVERITY NOTE;
-        REPORT "Height Setpoint: " & INTEGER'IMAGE(setpoint) SEVERITY NOTE;
-        REPORT "Height Actual: " & INTEGER'IMAGE(actual) SEVERITY NOTE;
-        REPORT "Height Output: " & INTEGER'IMAGE(TO_INTEGER(UNSIGNED(output))) SEVERITY NOTE;
-        REPORT "Values Ready: " & STD_LOGIC'IMAGE(values_ready) SEVERITY NOTE;
+        report "=== Test Case: " & test_name & " ===" severity note;
+        report "Height Setpoint: " & integer'image(setpoint) severity note;
+        report "Height Actual: " & integer'image(actual) severity note;
+        report "Height Output: " & integer'image(to_integer(unsigned(output))) severity note;
+        report "Values Ready: " & std_logic'image(values_ready) severity note;
     END PROCEDURE;
 
 BEGIN
     -- DUT instantiation
-    UUT : MotorPIDControl
+    UUT: MotorPIDControl
     GENERIC MAP (
-        data_width => DATA_WIDTH,
-        internal_width => INTERNAL_WIDTH
+        data_width => 32,
+        internal_width => 16
     )
     PORT MAP (
         clock => clock,
@@ -134,37 +124,40 @@ BEGIN
     BEGIN
         -- Initial reset
         reset <= '0';
-        WAIT FOR CLK_PERIOD * 2;
+        WAIT FOR CLK_PERIOD * 10;
         reset <= '1';
-        WAIT FOR CLK_PERIOD * 2;
+        WAIT FOR CLK_PERIOD * 10;
 
         -- Test Case 1: Hover at fixed height
-        height_setpoint <= x"00000800"; -- 2048 (middle height)
-        height_actual <= x"00000400";   -- 1024 (lower than setpoint)
-        WAIT FOR CLK_PERIOD * 10;
+        height_setpoint <= x"00000800";  -- 2048
+        height_actual <= x"00000400";    -- 1024
+        height_kp <= x"0014";            -- Kp = 20
+        height_ki <= x"0019";            -- Ki = 25
+        height_kd <= x"0001";            -- Kd = 1
+        WAIT FOR CLK_PERIOD * 100;       -- Increased wait time for settling
         print_height_test("Hover Height Control", 2048, 1024, height_output);
 
         -- Test Case 2: Ascend
-        height_setpoint <= x"00000C00"; -- 3072 (75% height)
-        height_actual <= x"00000800";   -- 2048 (current height)
-        WAIT FOR CLK_PERIOD * 10;
+        height_setpoint <= x"00000C00";  -- 3072
+        height_actual <= x"00000800";    -- 2048
+        WAIT FOR CLK_PERIOD * 100;
         print_height_test("Ascending", 3072, 2048, height_output);
 
         -- Test Case 3: Descend
-        height_setpoint <= x"00000400"; -- 1024 (25% height)
-        height_actual <= x"00000800";   -- 2048 (current height)
-        WAIT FOR CLK_PERIOD * 10;
+        height_setpoint <= x"00000400";  -- 1024
+        height_actual <= x"00000800";    -- 2048
+        WAIT FOR CLK_PERIOD * 100;
         print_height_test("Descending", 1024, 2048, height_output);
 
         -- Test Case 4: Maximum Height
-        height_setpoint <= x"00000FA0"; -- 4000 (max height)
-        height_actual <= x"00000000";   -- 0 (ground level)
-        WAIT FOR CLK_PERIOD * 10;
+        height_setpoint <= x"00000FA0";  -- 4000
+        height_actual <= x"00000000";    -- 0
+        WAIT FOR CLK_PERIOD * 100;
         print_height_test("Maximum Height", 4000, 0, height_output);
 
-        -- Test Case 5: Emergency Landing (Reset)
+        -- Test Case 5: Emergency Landing
         reset <= '0';
-        WAIT FOR CLK_PERIOD * 5;
+        WAIT FOR CLK_PERIOD * 20;
         print_height_test("Emergency Landing", 0, 0, height_output);
 
         REPORT "=== Test Complete ===" SEVERITY NOTE;

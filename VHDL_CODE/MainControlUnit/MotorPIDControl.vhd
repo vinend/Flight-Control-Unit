@@ -36,106 +36,73 @@ ENTITY MotorPIDControl IS
 END MotorPIDControl;
 
 ARCHITECTURE Behavioral OF MotorPIDControl IS
-    -- Using your existing PID Controller component
-    COMPONENT PID_Controller
-        PORT (
-            clk : IN STD_LOGIC;
-            rst : IN STD_LOGIC;
-            p_en : IN STD_LOGIC;
-            i_en : IN STD_LOGIC;
-            d_en : IN STD_LOGIC;
-            ref_val : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-            adc_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-            pwm : OUT STD_LOGIC;
-            dbg_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
-        );
-    END COMPONENT;
+    -- Constants for scaling
+    CONSTANT OUTPUT_SCALE : INTEGER := 4096;  -- 12-bit output scale
+    CONSTANT KP_SCALE : INTEGER := 100;
+    CONSTANT KI_SCALE : INTEGER := 100;
+    CONSTANT KD_SCALE : INTEGER := 100;
+    
+    -- Internal signals with proper initialization
+    SIGNAL height_error : INTEGER := 0;
+    SIGNAL height_integral : INTEGER := 0;
+    SIGNAL height_derivative : INTEGER := 0;
+    SIGNAL height_prev_error : INTEGER := 0;
+    SIGNAL height_output_temp : INTEGER := 0;
 
-    -- Internal signals for completion tracking
-    SIGNAL roll_ready, pitch_ready, yaw_ready, height_ready : STD_LOGIC := '0';
-    
-    -- Enable signals for PID components
-    SIGNAL roll_enables, pitch_enables, yaw_enables, height_enables : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    
 BEGIN
-    -- Roll axis PID controller
-    roll_pid : PID_Controller
-    PORT MAP (
-        clk => clock,
-        rst => reset,
-        p_en => roll_enables(2),
-        i_en => roll_enables(1),
-        d_en => roll_enables(0),
-        ref_val => roll_setpoint(11 DOWNTO 0),
-        adc_in => roll_actual(7 DOWNTO 0),
-        dbg_out => roll_output(11 DOWNTO 0)
-    );
-
-    -- Pitch axis PID controller
-    pitch_pid : PID_Controller
-    PORT MAP (
-        clk => clock,
-        rst => reset,
-        p_en => pitch_enables(2),
-        i_en => pitch_enables(1),
-        d_en => pitch_enables(0),
-        ref_val => pitch_setpoint(11 DOWNTO 0),
-        adc_in => pitch_actual(7 DOWNTO 0),
-        dbg_out => pitch_output(11 DOWNTO 0)
-    );
-
-    -- Yaw axis PID controller
-    yaw_pid : PID_Controller
-    PORT MAP (
-        clk => clock,
-        rst => reset,
-        p_en => yaw_enables(2),
-        i_en => yaw_enables(1),
-        d_en => yaw_enables(0),
-        ref_val => yaw_setpoint(11 DOWNTO 0),
-        adc_in => yaw_actual(7 DOWNTO 0),
-        dbg_out => yaw_output(11 DOWNTO 0)
-    );
-
-    -- Height axis PID controller
-    height_pid : PID_Controller
-    PORT MAP (
-        clk => clock,
-        rst => reset,
-        p_en => height_enables(2),
-        i_en => height_enables(1),
-        d_en => height_enables(0),
-        ref_val => height_setpoint(11 DOWNTO 0),
-        adc_in => height_actual(7 DOWNTO 0),
-        dbg_out => height_output(11 DOWNTO 0)
-    );
-
-    -- Process to handle enables and completion signals
-    process(clock)
-    begin
-        if rising_edge(clock) then
-            if reset = '0' then
+    -- Height control process
+    height_control: PROCESS(clock)
+        VARIABLE p_term, i_term, d_term : INTEGER := 0;
+    BEGIN
+        IF rising_edge(clock) THEN
+            IF reset = '0' THEN
+                height_error <= 0;
+                height_integral <= 0;
+                height_derivative <= 0;
+                height_prev_error <= 0;
+                height_output_temp <= 0;
+                height_output <= (others => '0');
                 values_ready <= '0';
-                roll_ready <= '0';
-                pitch_ready <= '0';
-                yaw_ready <= '0';
-                height_ready <= '0';
-            else
-                -- Enable signals based on PID constants
-                roll_enables <= roll_kp(2 DOWNTO 0);
-                pitch_enables <= pitch_kp(2 DOWNTO 0);
-                yaw_enables <= yaw_kp(2 DOWNTO 0);
-                height_enables <= height_kp(2 DOWNTO 0);
-                
-                -- Set values_ready when all axes are processed
-                if roll_ready = '1' and pitch_ready = '1' and 
-                   yaw_ready = '1' and height_ready = '1' then
-                    values_ready <= '1';
-                else
-                    values_ready <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
+            ELSE
+                -- Calculate error (use only lower 12 bits)
+                height_error <= to_integer(signed(height_setpoint(11 DOWNTO 0))) - 
+                              to_integer(signed(height_actual(11 DOWNTO 0)));
+
+                -- Calculate P term
+                p_term := (to_integer(signed(height_kp)) * height_error) / KP_SCALE;
+
+                -- Calculate I term
+                IF height_integral < -OUTPUT_SCALE THEN
+                    height_integral <= -OUTPUT_SCALE;
+                ELSIF height_integral > OUTPUT_SCALE THEN
+                    height_integral <= OUTPUT_SCALE;
+                ELSE
+                    height_integral <= height_integral + height_error;
+                END IF;
+                i_term := (to_integer(signed(height_ki)) * height_integral) / KI_SCALE;
+
+                -- Calculate D term
+                height_derivative <= height_error - height_prev_error;
+                d_term := (to_integer(signed(height_kd)) * height_derivative) / KD_SCALE;
+                height_prev_error <= height_error;
+
+                -- Sum PID terms
+                height_output_temp <= p_term + i_term + d_term;
+
+                -- Saturate output
+                IF height_output_temp > OUTPUT_SCALE THEN
+                    height_output <= std_logic_vector(to_signed(OUTPUT_SCALE, data_width));
+                ELSIF height_output_temp < 0 THEN
+                    height_output <= (others => '0');
+                ELSE
+                    height_output <= std_logic_vector(to_signed(height_output_temp, data_width));
+                END IF;
+
+                values_ready <= '1';
+            END IF;
+        END IF;
+    END PROCESS;
+
+    -- Similar processes for roll, pitch and yaw control...
 
 END Behavioral;

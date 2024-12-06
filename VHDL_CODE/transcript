@@ -1,58 +1,102 @@
-# Compile of AnalogConverter.vhd was successful.
-# Compile of error_register.vhd was successful.
-# Compile of Integration.vhd was successful.
-# Compile of PID_Controller.vhd was successful.
-# Compile of trigger.vhd was successful.
-# Compile of PID_Controller_tb.vhd was successful with warnings.
 # Compile of MotorPIDControl.vhd was successful.
-# Compile of PWMGeneratorMOTOR.vhd was successful.
 # Compile of MotorPIDControl_tb.vhd was successful.
-# 9 compiles, 0 failed with no errors.
+# 2 compiles, 0 failed with no errors.
 vsim -gui work.motorpidcontrol_tb
 # vsim -gui work.motorpidcontrol_tb 
-# Start time: 18:43:27 on Dec 06,2024
+# Start time: 20:55:30 on Dec 06,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.motorpidcontrol_tb(behavioral)
 # Loading work.motorpidcontrol(behavioral)
-# Loading work.pid_controller(behavioral)
-# ** Fatal: (vsim-3817) Port "kp_sw" of entity "pid_controller" is not in the component being instantiated.
-#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd Line: 10
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 18:43:27 on Dec 06,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
+# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/roll_output(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/pitch_output(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/yaw_output(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/motorpidcontrol_tb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: vinen  Hostname: VINMACHINE  ProcessID: 15276
+#           Attempting to use alternate WLF file "./wlftjsk4bs".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjsk4bs
 vsim -gui work.motorpidcontrol_tb
+# End time: 20:55:49 on Dec 06,2024, Elapsed time: 0:00:19
+# Errors: 0, Warnings: 7
 # vsim -gui work.motorpidcontrol_tb 
-# Start time: 18:43:48 on Dec 06,2024
+# Start time: 20:55:49 on Dec 06,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.motorpidcontrol_tb(behavioral)
 # Loading work.motorpidcontrol(behavioral)
-# Loading work.pid_controller(behavioral)
-# ** Fatal: (vsim-3817) Port "kp_sw" of entity "pid_controller" is not in the component being instantiated.
-#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd Line: 10
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 18:43:49 on Dec 06,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 1
-vsim -gui work.motorpidcontrol_tb
-# vsim -gui work.motorpidcontrol_tb 
-# Start time: 18:44:13 on Dec 06,2024
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.motorpidcontrol_tb(behavioral)
-# Loading work.motorpidcontrol(behavioral)
-# Loading work.pid_controller(behavioral)
-# ** Fatal: (vsim-3817) Port "kp_sw" of entity "pid_controller" is not in the component being instantiated.
-#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd Line: 10
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 18:44:14 on Dec 06,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 1
+# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/roll_output(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/pitch_output(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/yaw_output(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/motorpidcontrol_tb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: vinen  Hostname: VINMACHINE  ProcessID: 15276
+#           Attempting to use alternate WLF file "./wlft8xmb8h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8xmb8h
+run -all
+# ** Note: === Test Case: Hover Height Control ===
+#    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Setpoint: 2048
+#    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Actual: 1024
+#    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Output: 0
+#    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Ascending ===
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Setpoint: 3072
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Actual: 2048
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Output: 1228
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Descending ===
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Setpoint: 1024
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Actual: 2048
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Output: 1638
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Maximum Height ===
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Setpoint: 4000
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Actual: 0
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Output: 0
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Emergency Landing ===
+#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Setpoint: 0
+#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Actual: 0
+#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height Output: 0
+#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '0'
+#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Complete ===
+#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
