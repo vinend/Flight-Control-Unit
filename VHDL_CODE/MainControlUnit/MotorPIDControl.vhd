@@ -2,7 +2,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
-ENTITY FourAxisPIDController IS
+ENTITY MotorPIDControl IS
     GENERIC (
         data_width : INTEGER := 32;
         internal_width : INTEGER := 16
@@ -33,9 +33,9 @@ ENTITY FourAxisPIDController IS
         
         values_ready : OUT STD_LOGIC
     );
-END FourAxisPIDController;
+END MotorPIDControl;
 
-ARCHITECTURE Behavioral OF FourAxisPIDController IS
+ARCHITECTURE Behavioral OF MotorPIDControl IS
     -- Using your existing PID Controller component
     COMPONENT PID_Controller
         PORT (

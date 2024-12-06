@@ -1,11 +1,7 @@
-{C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd}
+{C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/MainControlUnit/PWMGeneratorMOTOR.vhd} {0 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/MainControlUnit/PWMGeneratorMOTOR.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity error_register
--- Compiling architecture Behavioral of error_register
+** Error (suppressible): C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/MainControlUnit/PWMGeneratorMOTOR.vhd(1): (vcom-1491) Empty source files.
 
 } {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -16,14 +12,32 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity AnalogConverter
 -- Compiling architecture Behavioral of AnalogConverter
 
-} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd}
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity trigger
--- Compiling architecture Behavioral of trigger
+-- Compiling entity error_register
+-- Compiling architecture Behavioral of error_register
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Testbench/PID_Controller_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Testbench/PID_Controller_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PID_Controller_tb
+-- Compiling architecture Behavioral of PID_Controller_tb
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PID_Controller
+-- Compiling architecture Behavioral of PID_Controller
 
 } {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -33,5 +47,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity Integration
 -- Compiling architecture Behavioral of Integration
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity trigger
+-- Compiling architecture Behavioral of trigger
 
 } {} {}}
