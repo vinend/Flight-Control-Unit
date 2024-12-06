@@ -14,7 +14,7 @@ Z0 w1733316824
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 22
+!i122 60
 Z4 dC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE
 Z5 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
 Z6 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
@@ -24,9 +24,9 @@ VaAGa83=DTlVXB?NhGFGBl1
 !s100 0@HV`RIN>@5LLB;e^LJ;02
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1733316827
+Z8 !s110 1733469902
 !i10b 1
-Z9 !s108 1733316827.000000
+Z9 !s108 1733469902.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd|
 Z11 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd|
 !i113 1
@@ -37,7 +37,7 @@ R1
 R2
 R3
 DEx4 work 15 analogconverter 0 22 aAGa83=DTlVXB?NhGFGBl1
-!i122 22
+!i122 60
 l78
 L15 130
 Vm5G0_HC`P4B1a2JO@f:^E1
@@ -57,7 +57,7 @@ Z14 w1733315020
 R1
 R2
 R3
-!i122 18
+!i122 61
 R4
 Z15 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd
 Z16 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd
@@ -67,11 +67,11 @@ V@j0acRGooWlFa9ocW3?Qf3
 !s100 hU`zjBF:nN?M@1o8MQU3V0
 R7
 32
-Z17 !s110 1733316584
+R8
 !i10b 1
-Z18 !s108 1733316584.000000
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd|
-Z20 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd|
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd|
+Z18 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/error_register.vhd|
 !i113 1
 R12
 R13
@@ -80,41 +80,41 @@ R1
 R2
 R3
 DEx4 work 14 error_register 0 22 @j0acRGooWlFa9ocW3?Qf3
-!i122 18
+!i122 61
 l14
 L13 9
 VH06L^D]?Z`mC_5E[[7ESP3
 !s100 <dZdgKck1k9Uf5aUCl88^2
 R7
 32
-R17
+R8
 !i10b 1
+R9
+R17
 R18
-R19
-R20
 !i113 1
 R12
 R13
 Eintegration
-Z21 w1733321329
+Z19 w1733321329
 R1
 R2
 R3
-!i122 25
+!i122 62
 R4
-Z22 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd
-Z23 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd
+Z20 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd
+Z21 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd
 l0
 L5 1
 VCz_@96o7[EMkmh3=:A]LT1
 !s100 LddEKBNgB@GSWHb3[T:JH0
 R7
 32
-Z24 !s110 1733321344
+R8
 !i10b 1
-Z25 !s108 1733321344.000000
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd|
-Z27 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd|
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd|
+Z23 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Integration.vhd|
 !i113 1
 R12
 R13
@@ -123,41 +123,41 @@ R1
 R2
 R3
 DEx4 work 11 integration 0 22 Cz_@96o7[EMkmh3=:A]LT1
-!i122 25
+!i122 62
 l32
 L20 50
 Vo@eKPL1m1JPfMfhj@_Zb?2
 !s100 4o9X5gM`n12JG3`m@DZo>0
 R7
 32
-R24
+R8
 !i10b 1
-R25
-R26
-R27
+R9
+R22
+R23
 !i113 1
 R12
 R13
 Eintegration_tb
-Z28 w1733285699
+Z24 w1733285699
 R1
 R2
 R3
 !i122 5
 R4
-Z29 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd
-Z30 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd
+Z25 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd
+Z26 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd
 l0
 L6 1
 V2EbD_OVT13];]0Qme:GP_1
 !s100 74DbY`V9;eV`2?iN>UJAL0
 R7
 32
-Z31 !s110 1733285702
+Z27 !s110 1733285702
 !i10b 1
-Z32 !s108 1733285702.000000
-Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd|
-Z34 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd|
+Z28 !s108 1733285702.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd|
+Z30 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/Testbench/Integration_tb.vhd|
 !i113 1
 R12
 R13
@@ -173,34 +173,34 @@ V_PO]UdlZ]o2J3KG6B;CoZ0
 !s100 Hd8Xk>hT3T9KbB<3k<GIe0
 R7
 32
-R31
+R27
 !i10b 1
-R32
-R33
-R34
+R28
+R29
+R30
 !i113 1
 R12
 R13
 Epid_controller
-Z35 w1733321339
+Z31 w1733379766
 R1
 R2
 R3
-!i122 26
+!i122 63
 R4
-Z36 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
-Z37 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+Z32 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+Z33 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
 l0
 L5 1
-VOPFkMN6IUP?LVYkT8W`n33
-!s100 W5zCBl5>;dORiHfAHSaj02
+Vzzd75:06WDlOIZM8i]GU?0
+!s100 6zD?A4[zJ7gon0B5kBllb3
 R7
 32
-Z38 !s110 1733321346
+R8
 !i10b 1
-Z39 !s108 1733321346.000000
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd|
-Z41 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd|
+R9
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd|
+Z35 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd|
 !i113 1
 R12
 R13
@@ -208,42 +208,85 @@ Abehavioral
 R1
 R2
 R3
-Z42 DEx4 work 14 pid_controller 0 22 OPFkMN6IUP?LVYkT8W`n33
-!i122 26
-l85
-Z43 L25 150
-Z44 V58^oGKf2@^P<1NoA]3T`F0
-Z45 !s100 bLLg;bQQGhJk_4WTC]fHR1
+DEx4 work 14 pid_controller 0 22 zzd75:06WDlOIZM8i]GU?0
+!i122 63
+l66
+L19 139
+VF1W]ERZL;OiC@?GYb504B3
+!s100 9`19[<a<PITa1W0iF<N5F3
 R7
 32
-R38
+R8
 !i10b 1
+R9
+R34
+R35
+!i113 1
+R12
+R13
+Epid_controller_tb
+Z36 w1733469715
+R1
+R2
+R3
+!i122 65
+R4
+Z37 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Testbench/PID_Controller_tb.vhd
+Z38 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Testbench/PID_Controller_tb.vhd
+l0
+L5 1
+VLnS;O@z>Lz@3EJ<QjjUz:0
+!s100 I>dD_`KR@X<[XTD6VA[>R1
+R7
+32
+Z39 !s110 1733469903
+!i10b 1
+Z40 !s108 1733469903.000000
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Testbench/PID_Controller_tb.vhd|
+Z42 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/Testbench/PID_Controller_tb.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+Z43 DEx4 work 17 pid_controller_tb 0 22 LnS;O@z>Lz@3EJ<QjjUz:0
+!i122 65
+l54
+Z44 L8 124
+Z45 VU^;I?E8Ile<93hbJX1<WE1
+Z46 !s100 P72VHPh^zT;HS>oNgc>Bo1
+R7
+32
 R39
+!i10b 1
 R40
 R41
+R42
 !i113 1
 R12
 R13
 Epwm_generator
-Z46 w1733315602
+Z47 w1733315602
 R1
 R2
 R3
 !i122 14
 R4
-Z47 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd
-Z48 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd
+Z48 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd
+Z49 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd
 l0
 L5 1
 Vk2?UZllWjf:lJFS6SfAeG3
 !s100 iab4oAY4K:OCGbBV4^afb0
 R7
 32
-Z49 !s110 1733316305
+Z50 !s110 1733316305
 !i10b 1
-Z50 !s108 1733316305.000000
-Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd|
-Z52 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd|
+Z51 !s108 1733316305.000000
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd|
+Z53 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PWM_Generator.vhd|
 !i113 1
 R12
 R13
@@ -259,34 +302,34 @@ V?<HA0>25C_ee=1]G2AZ?n3
 !s100 =MoFfJlILzChDH=H]GIk02
 R7
 32
-R49
-!i10b 1
 R50
+!i10b 1
 R51
 R52
+R53
 !i113 1
 R12
 R13
 Etb_integration
-Z53 w1733286597
+Z54 w1733286597
 R1
 R2
 R3
 !i122 12
 R4
-R29
-R30
+R25
+R26
 l0
 L6 1
 VS;5VC^0=j3X<Dom1:=M7;0
 !s100 APHM5>]UPcfGnggI;U^D51
 R7
 32
-Z54 !s110 1733286693
+Z55 !s110 1733286693
 !i10b 1
-Z55 !s108 1733286693.000000
-R33
-R34
+Z56 !s108 1733286693.000000
+R29
+R30
 !i113 1
 R12
 R13
@@ -302,32 +345,32 @@ Vk<>ImcCUbG<M;948C`Y<Y1
 !s100 ]lJW=k80^cW_ddNhZi9o40
 R7
 32
-R54
-!i10b 1
 R55
-R33
-R34
+!i10b 1
+R56
+R29
+R30
 !i113 1
 R12
 R13
 Etrigger
-Z56 w1733316266
+Z57 w1733316266
 R1
 R2
 R3
-!i122 20
+!i122 64
 R4
-Z57 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd
-Z58 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd
+Z58 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd
+Z59 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd
 l0
 L5 1
 Vej[RjO89OR[MU?c;fF85j1
 !s100 0^EHJci_dJm_IkIJogbiX1
 R7
 32
-Z59 !s110 1733316585
+R39
 !i10b 1
-R18
+R9
 Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd|
 Z61 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/trigger.vhd|
 !i113 1
@@ -338,16 +381,16 @@ R1
 R2
 R3
 DEx4 work 7 trigger 0 22 ej[RjO89OR[MU?c;fF85j1
-!i122 20
+!i122 64
 l25
 L12 43
 VSKkgW_h:i=mmVlng?a=Ed1
 !s100 b19H:f@I;[@8iTmIH>QGO2
 R7
 32
-R59
+R39
 !i10b 1
-R18
+R9
 R60
 R61
 !i113 1

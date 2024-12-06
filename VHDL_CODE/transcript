@@ -1,14 +1,122 @@
-# Compile of AnalogConverter.vhd failed with 2 errors.
+# Compile of AnalogConverter.vhd was successful.
 # Compile of error_register.vhd was successful.
 # Compile of Integration.vhd was successful.
-# Compile of PID_Controller.vhd failed with 1 errors.
+# Compile of PID_Controller.vhd was successful.
 # Compile of trigger.vhd was successful.
-# 5 compiles, 2 failed with 3 errors.
-# Compile of AnalogConverter.vhd failed with 2 errors.
-# Compile of AnalogConverter.vhd failed with 1 errors.
-# Compile of AnalogConverter.vhd was successful.
-# Compile of PID_Controller.vhd failed with 3 errors.
-# Compile of PID_Controller.vhd was successful with warnings.
-# Compile of PID_Controller.vhd was successful with warnings.
-# Compile of Integration.vhd was successful.
-# Compile of PID_Controller.vhd was successful with warnings.
+# Compile of PID_Controller_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.pid_controller_tb
+# vsim -gui work.pid_controller_tb 
+# Start time: 14:25:13 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.pid_controller_tb(behavioral)
+# Loading work.pid_controller(behavioral)
+# Loading work.analogconverter(behavioral)
+# ** Warning: (vsim-3473) Component instance "XADC_inst : XADC" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /pid_controller_tb/UUT/adc_conv File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
+# ** Warning: (vsim-3473) Component instance "trig_gen : Triggered" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /pid_controller_tb/UUT File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# Loading work.pwm_generator(behavioral)
+# ** Warning: (vsim-8684) No drivers exist on out port /pid_controller_tb/UUT/adc_conv/conv_done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /pid_controller_tb/UUT/conv_rdy.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/pid_controller_tb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: vinen  Hostname: VINMACHINE  ProcessID: 15276
+#           Attempting to use alternate WLF file "./wlftikc0ii".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftikc0ii
+vsim -gui work.pid_controller_tb
+# End time: 14:25:35 on Dec 06,2024, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 7
+# vsim -gui work.pid_controller_tb 
+# Start time: 14:25:35 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.pid_controller_tb(behavioral)
+# Loading work.pid_controller(behavioral)
+# Loading work.analogconverter(behavioral)
+# ** Warning: (vsim-3473) Component instance "XADC_inst : XADC" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /pid_controller_tb/UUT/adc_conv File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
+# ** Warning: (vsim-3473) Component instance "trig_gen : Triggered" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /pid_controller_tb/UUT File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# Loading work.pwm_generator(behavioral)
+# ** Warning: (vsim-8684) No drivers exist on out port /pid_controller_tb/UUT/adc_conv/conv_done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /pid_controller_tb/UUT/conv_rdy.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/pid_controller_tb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: vinen  Hostname: VINMACHINE  ProcessID: 15276
+#           Attempting to use alternate WLF file "./wlfthg4nhy".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfthg4nhy
+run -all
+# ** Note: === Test Case: P Control Only ===
+#    Time: 220 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Reference value: 2048
+#    Time: 220 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: ADC input value: 128
+#    Time: 220 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Expected PWM value: 1024
+#    Time: 220 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Actual output value: 409
+#    Time: 220 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Controls: P='1' I='0' D='0'
+#    Time: 220 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: === Test Case: PI Control ===
+#    Time: 320 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Reference value: 3072
+#    Time: 320 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: ADC input value: 64
+#    Time: 320 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Expected PWM value: 2048
+#    Time: 320 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Actual output value: 614
+#    Time: 320 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Controls: P='1' I='1' D='0'
+#    Time: 320 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: === Test Case: Full PID ===
+#    Time: 420 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Reference value: 4000
+#    Time: 420 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: ADC input value: 255
+#    Time: 420 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Expected PWM value: 3000
+#    Time: 420 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Actual output value: 800
+#    Time: 420 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Controls: P='1' I='1' D='1'
+#    Time: 420 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: === Test Case: System Reset ===
+#    Time: 470 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Reference value: 4000
+#    Time: 470 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: ADC input value: 255
+#    Time: 470 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Expected PWM value: 0
+#    Time: 470 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Actual output value: 0
+#    Time: 470 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Controls: P='1' I='1' D='1'
+#    Time: 470 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: === Test Case: Integral Windup Test ===
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Reference value: 4095
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: ADC input value: 0
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Expected PWM value: 4000
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Actual output value: 0
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: Controls: P='0' I='1' D='0'
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
+# ** Note: === Test Complete ===
+#    Time: 670 ns  Iteration: 0  Instance: /pid_controller_tb
