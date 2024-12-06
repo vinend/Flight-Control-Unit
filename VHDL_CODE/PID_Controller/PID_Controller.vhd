@@ -3,47 +3,50 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY PID_Controller IS
+    GENERIC (
+        N : INTEGER := 16  -- number of bits of PWM counter
+    );
     PORT (
-        clk : IN STD_LOGIC;                               -- was clock
-        rst : IN STD_LOGIC;                               -- was reset
-        p_en : IN STD_LOGIC;                             -- was kp_enable
-        i_en : IN STD_LOGIC;                             -- was ki_enable
-        d_en : IN STD_LOGIC;                             -- was kd_enable
-        ref_val : IN STD_LOGIC_VECTOR(11 DOWNTO 0);      -- was setpoint
-        adc_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0);        -- was adc_input
-        pwm : OUT STD_LOGIC;                             -- was pwm_out
-        dbg_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)      -- was debug_output
+        kp_sw : IN std_logic;
+        ki_sw : IN std_logic;
+        kd_sw : IN std_logic;
+        SetVal : IN std_logic_vector(11 DOWNTO 0);
+        PWM_PIN : OUT std_logic;
+        ADC : IN std_logic_vector(7 DOWNTO 0);
+        reset_button : IN std_logic;
+        display_output : OUT std_logic_vector(11 DOWNTO 0);
+        clk : IN std_logic;
+        anode_activate : OUT std_logic_vector(3 DOWNTO 0);
+        led_out : OUT std_logic_vector(6 DOWNTO 0)
     );
 END PID_Controller;
 
 ARCHITECTURE Behavioral OF PID_Controller IS
-    -- Constants remain same but renamed
-    CONSTANT P_NUM : INTEGER := 20;                       -- was KP_NUM
-    CONSTANT P_DEN : INTEGER := 100;                      -- was KP_DEN
-    CONSTANT I_NUM : INTEGER := 25;                       -- was KI_NUM
-    CONSTANT I_DEN : INTEGER := 100;                      -- was KI_DEN
-    CONSTANT D_NUM : INTEGER := 1;                        -- was KD_NUM
-    CONSTANT D_DEN : INTEGER := 100;                      -- was KD_DEN
-    CONSTANT T_DIV : INTEGER := 100;                      -- was TIME_DIV
+    -- Constants
+    CONSTANT con_Kp : INTEGER := 20;  -- proportional constant
+    CONSTANT con_kp_den : INTEGER := 100;
+    CONSTANT con_Kd : INTEGER := 1;  -- differential constant
+    CONSTANT con_kd_den : INTEGER := 100;
+    CONSTANT con_Ki : INTEGER := 25;  -- integral constant
+    CONSTANT con_ki_den : INTEGER := 100;
+    CONSTANT divider_for_time : INTEGER := 100;
 
-    -- Internal signals renamed
-    SIGNAL out_val, avg_res : STD_LOGIC_VECTOR(11 DOWNTO 0);    -- was output, average_result
-    SIGNAL adc_val : STD_LOGIC_VECTOR(15 DOWNTO 0);             -- was adc_result
-    SIGNAL err, err_d, int_sum, err_old : INTEGER := 0;         -- was error, error_diff, integral_term, old_error
-    SIGNAL p_val, i_val, d_val : INTEGER := 0;                  -- was p_term, i_term, d_term
-    SIGNAL out_sum : INTEGER := 0;                              -- was output_loaded
-    SIGNAL trig, conv_rdy : STD_LOGIC := '0';                   -- was trigger_adc, conversion_done
-    SIGNAL err_curr, err_prev : STD_LOGIC_VECTOR(31 DOWNTO 0);  -- was std_error, std_old_error
-    SIGNAL pwm_val : STD_LOGIC_VECTOR(11 DOWNTO 0);            -- was pwm_duty
+    -- Signals
+    SIGNAL output, average_result : std_logic_vector(11 DOWNTO 0) := (others => '0');
+    SIGNAL adc_Data : std_logic_vector(15 DOWNTO 0) := (others => '0');
+    SIGNAL Error, Error_difference, integral_term, old_error, p, i, d : INTEGER := 0;
+    SIGNAL output_loaded, output_saturation_buffer : INTEGER := 0;
+    SIGNAL control_trigger_buffer, adc_trigger_buffer, conversion_complete, integration_trigger : std_logic := '0';
+    SIGNAL std_error, std_old_error : std_logic_vector(31 DOWNTO 0) := (others => '0');
 
-    -- Component declarations stay identical
+    -- Component declarations
     COMPONENT AnalogConverter
         PORT (
             sys_clock : IN STD_LOGIC;
-            start_conv : IN STD_LOGIC;
-            conv_done : OUT STD_LOGIC;
-            adc_result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-            analog_pins : IN STD_LOGIC_VECTOR(7 DOWNTO 0)
+            start_conv : IN std_logic;
+            conv_done : OUT std_logic;
+            adc_result : OUT std_logic_vector(15 DOWNTO 0);
+            analog_pins : IN std_logic_vector(7 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -56,102 +59,137 @@ ARCHITECTURE Behavioral OF PID_Controller IS
 
     COMPONENT PWM_Generator
         PORT (
-            enable : IN STD_LOGIC;
-            duty_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-            clock : IN STD_LOGIC;
-            pwm_out : OUT STD_LOGIC
+            enable : IN std_logic;
+            duty_in : IN std_logic_vector(11 DOWNTO 0);
+            clock : IN std_logic;
+            pwm_out : OUT std_logic
+        );
+    END COMPONENT;
+
+    COMPONENT average
+        PORT (
+            average_complete : OUT std_logic;
+            ADC_RESULT : IN std_logic_vector(11 DOWNTO 0);
+            average_trigger : IN std_logic;
+            averaged_adc_result : OUT std_logic_vector(11 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT error_flip_flop
+        PORT (
+            Error : IN std_logic_vector(31 DOWNTO 0);
+            old_error : OUT std_logic_vector(31 DOWNTO 0);
+            trigger : IN std_logic
         );
     END COMPONENT;
 
 BEGIN
-    -- Component instantiations with new signal names
-    adc_conv : AnalogConverter
-    PORT MAP (
-        sys_clock => clk,
-        start_conv => trig,
-        conv_done => conv_rdy,
-        adc_result => adc_val,
-        analog_pins => adc_in
-    );
+    -- Component instantiations
+    UUT1 : error_flip_flop
+        PORT MAP (
+            Error => std_error,
+            old_error => std_old_error,
+            trigger => integration_trigger
+        );
 
-    trig_gen : Triggered
-    PORT MAP (
-        adc_trigger_out => trig,
-        clock_in => clk
-    );
+    UUT2 : Triggered
+        PORT MAP (
+            adc_trigger_out => adc_trigger_buffer,
+            clock_in => clk
+        );
 
-    pwm_gen : PWM_Generator
-    PORT MAP (
-        enable => rst,
-        duty_in => pwm_val,
-        clock => clk,
-        pwm_out => pwm
-    );
+    UUT3 : PWM_Generator
+        PORT MAP (
+            enable => reset_button,
+            duty_in => output,
+            clock => clk,
+            pwm_out => PWM_PIN
+        );
 
-    -- Main process
-    main_proc : PROCESS(clk)
+    UUT4 : AnalogConverter
+        PORT MAP (
+            sys_clock => clk,
+            start_conv => adc_trigger_buffer,
+            conv_done => conversion_complete,
+            adc_result => adc_Data,
+            analog_pins => ADC
+        );
+
+    UUT5 : average
+        PORT MAP (
+            average_complete => integration_trigger,
+            ADC_RESULT => adc_Data(15 DOWNTO 4),
+            average_trigger => conversion_complete,
+            averaged_adc_result => average_result
+        );
+
+    -- Main PID process
+    pid_process: PROCESS(clk)
     BEGIN
         IF rising_edge(clk) THEN
-            IF rst = '0' THEN
-                err <= 0;
-                out_sum <= 0;
-                pwm_val <= (others => '0');
-                dbg_out <= (others => '0');
+            IF reset_button = '0' THEN
+                Error <= 0;
+                Error_difference <= 0;
+                integral_term <= 0;
+                old_error <= 0;
+                p <= 0;
+                i <= 0;
+                d <= 0;
+                output_loaded <= 0;
+                output <= (others => '0');
             ELSE
                 -- Calculate error
-                err <= to_integer(unsigned(ref_val)) - to_integer(unsigned(adc_val(11 DOWNTO 0)));
+                Error <= to_integer(unsigned(SetVal)) - to_integer(unsigned(average_result));
                 
                 -- Calculate P term
-                IF p_en = '1' THEN
-                    p_val <= (err * P_NUM) / P_DEN;
+                IF kp_sw = '1' THEN
+                    p <= (con_Kp * Error) / con_kp_den;
                 ELSE
-                    p_val <= 0;
+                    p <= 0;
+                END IF;
+
+                -- Calculate I term
+                IF ki_sw = '1' THEN
+                    IF integral_term > (divider_for_time * con_ki_den * 4000) / con_Ki THEN
+                        integral_term <= (divider_for_time * con_ki_den * 4000) / con_Ki;
+                    ELSIF integral_term < 0 THEN
+                        integral_term <= 0;
+                    ELSE
+                        integral_term <= integral_term + Error;
+                    END IF;
+                    i <= (con_Ki * integral_term) / (divider_for_time * con_ki_den);
+                ELSE
+                    integral_term <= 0;
+                    i <= 0;
+                END IF;
+
+                -- Calculate D term
+                IF kd_sw = '1' THEN
+                    Error_difference <= Error - old_error;
+                    d <= (con_Kd * Error_difference * divider_for_time) / con_kd_den;
+                ELSE
+                    d <= 0;
                 END IF;
 
                 -- Sum and saturate output
-                out_sum <= p_val + i_val + d_val;
-                IF out_sum > 4000 THEN
-                    pwm_val <= std_logic_vector(to_unsigned(4000, 12));
-                ELSIF out_sum < 0 THEN
-                    pwm_val <= std_logic_vector(to_unsigned(0, 12));
+                output_saturation_buffer <= p + i + d;
+                IF output_saturation_buffer < 0 THEN
+                    output_loaded <= 0;
+                ELSIF output_saturation_buffer > 4000 THEN
+                    output_loaded <= 4000;
                 ELSE
-                    pwm_val <= std_logic_vector(to_unsigned(out_sum, 12));
+                    output_loaded <= output_saturation_buffer;
                 END IF;
 
-                dbg_out <= pwm_val;
+                output <= std_logic_vector(to_unsigned(output_loaded, 12));
+                display_output <= output;
+                old_error <= Error;
             END IF;
         END IF;
     END PROCESS;
 
-    -- Integration process
-    int_proc : PROCESS(conv_rdy)
-    BEGIN
-        IF rising_edge(conv_rdy) THEN
-            IF i_en = '1' THEN
-                int_sum <= int_sum + err;
-                IF int_sum > (T_DIV * I_DEN * 4000) / I_NUM THEN
-                    int_sum <= (T_DIV * I_DEN * 4000) / I_NUM;
-                ELSIF int_sum < 0 THEN
-                    int_sum <= 0;
-                END IF;
-                i_val <= (I_NUM * int_sum) / (T_DIV * I_DEN);
-            ELSE
-                int_sum <= 0;
-                i_val <= 0;
-            END IF;
-            err_d <= err - err_old;
-            err_old <= err;
-        END IF;
-    END PROCESS;
-
-    -- Derivative process
-    deriv_proc : PROCESS(err_d)
-    BEGIN
-        IF d_en = '1' THEN
-            d_val <= ((D_NUM * err_d) * T_DIV) / D_DEN;
-        ELSE
-            d_val <= 0;
-        END IF;
-    END PROCESS;
+    -- Convert error for display
+    std_error <= std_logic_vector(to_signed(Error, 32));
+    std_old_error <= std_logic_vector(to_signed(old_error, 32));
 
 END Behavioral;
