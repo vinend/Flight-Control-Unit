@@ -41,68 +41,119 @@ ARCHITECTURE Behavioral OF MotorPIDControl IS
     CONSTANT KP_SCALE : INTEGER := 100;
     CONSTANT KI_SCALE : INTEGER := 100;
     CONSTANT KD_SCALE : INTEGER := 100;
+
+    -- Internal signals for PID controllers
+    SIGNAL roll_output_buf, pitch_output_buf, yaw_output_buf, height_output_buf : STD_LOGIC_VECTOR(11 DOWNTO 0) := (others => '0');
+    SIGNAL roll_ready, pitch_ready, yaw_ready, height_ready : STD_LOGIC := '0';
     
-    -- Internal signals with proper initialization
-    SIGNAL height_error : INTEGER := 0;
-    SIGNAL height_integral : INTEGER := 0;
-    SIGNAL height_derivative : INTEGER := 0;
-    SIGNAL height_prev_error : INTEGER := 0;
-    SIGNAL height_output_temp : INTEGER := 0;
+    -- Internal enable signals
+    SIGNAL roll_en, pitch_en, yaw_en, height_en : STD_LOGIC := '1';  -- Default enabled
+
+    -- Component declaration for PID_Controller
+    COMPONENT PID_Controller IS
+        GENERIC (
+            N : INTEGER := 16  -- number of bits of PWM counter
+        );
+        PORT (
+            kp_sw : IN std_logic;
+            ki_sw : IN std_logic;
+            kd_sw : IN std_logic;
+            SetVal : IN std_logic_vector(11 DOWNTO 0);
+            PWM_PIN : OUT std_logic;
+            ADC : IN std_logic_vector(7 DOWNTO 0);
+            reset_button : IN std_logic;
+            display_output : OUT std_logic_vector(11 DOWNTO 0);
+            clk : IN std_logic;
+            anode_activate : OUT std_logic_vector(3 DOWNTO 0);
+            led_out : OUT std_logic_vector(6 DOWNTO 0)
+        );
+    END COMPONENT;
 
 BEGIN
-    -- Height control process
-    height_control: PROCESS(clock)
-        VARIABLE p_term, i_term, d_term : INTEGER := 0;
+    -- Enable signal generation
+    roll_en <= '1' when to_integer(unsigned(roll_kp)) /= 0 else '0';
+    pitch_en <= '1' when to_integer(unsigned(pitch_kp)) /= 0 else '0';
+    yaw_en <= '1' when to_integer(unsigned(yaw_kp)) /= 0 else '0';
+    height_en <= '1' when to_integer(unsigned(height_kp)) /= 0 else '0';
+
+    -- Roll axis PID controller
+    roll_pid : PID_Controller
+    PORT MAP (
+        kp_sw => roll_en,                -- Enable based on Kp value
+        ki_sw => roll_en,                -- Use same enable for all terms
+        kd_sw => roll_en,
+        SetVal => roll_setpoint(11 DOWNTO 0),
+        PWM_PIN => open,
+        ADC => roll_actual(7 DOWNTO 0),
+        reset_button => reset,
+        display_output => roll_output_buf,
+        clk => clock,
+        anode_activate => open,
+        led_out => open
+    );
+    roll_output <= x"00000" & roll_output_buf when roll_en = '1' else (others => '0');
+
+    -- Pitch axis PID controller
+    pitch_pid : PID_Controller
+    PORT MAP (
+        kp_sw => pitch_kp(15),
+        ki_sw => pitch_ki(15),
+        kd_sw => pitch_kd(15),
+        SetVal => pitch_setpoint(11 DOWNTO 0),
+        PWM_PIN => open,
+        ADC => pitch_actual(7 DOWNTO 0),
+        reset_button => reset,
+        display_output => pitch_output_buf,
+        clk => clock,
+        anode_activate => open,
+        led_out => open
+    );
+    pitch_output <= x"00000" & pitch_output_buf;
+
+    -- Yaw axis PID controller
+    yaw_pid : PID_Controller
+    PORT MAP (
+        kp_sw => yaw_kp(15),
+        ki_sw => yaw_ki(15),
+        kd_sw => yaw_kd(15),
+        SetVal => yaw_setpoint(11 DOWNTO 0),
+        PWM_PIN => open,
+        ADC => yaw_actual(7 DOWNTO 0),
+        reset_button => reset,
+        display_output => yaw_output_buf,
+        clk => clock,
+        anode_activate => open,
+        led_out => open
+    );
+    yaw_output <= x"00000" & yaw_output_buf;
+
+    -- Height axis PID controller
+    height_pid : PID_Controller
+    PORT MAP (
+        kp_sw => height_en,
+        ki_sw => height_en,
+        kd_sw => height_en,
+        SetVal => height_setpoint(11 DOWNTO 0),
+        PWM_PIN => open,
+        ADC => height_actual(7 DOWNTO 0),
+        reset_button => reset,
+        display_output => height_output_buf,
+        clk => clock,
+        anode_activate => open,
+        led_out => open
+    );
+    height_output <= x"00000" & height_output_buf when height_en = '1' else (others => '0');
+
+    -- Process to handle values_ready signal
+    ready_proc : PROCESS(clock)
     BEGIN
         IF rising_edge(clock) THEN
             IF reset = '0' THEN
-                height_error <= 0;
-                height_integral <= 0;
-                height_derivative <= 0;
-                height_prev_error <= 0;
-                height_output_temp <= 0;
-                height_output <= (others => '0');
                 values_ready <= '0';
             ELSE
-                -- Calculate error (use only lower 12 bits)
-                height_error <= to_integer(signed(height_setpoint(11 DOWNTO 0))) - 
-                              to_integer(signed(height_actual(11 DOWNTO 0)));
-
-                -- Calculate P term
-                p_term := (to_integer(signed(height_kp)) * height_error) / KP_SCALE;
-
-                -- Calculate I term
-                IF height_integral < -OUTPUT_SCALE THEN
-                    height_integral <= -OUTPUT_SCALE;
-                ELSIF height_integral > OUTPUT_SCALE THEN
-                    height_integral <= OUTPUT_SCALE;
-                ELSE
-                    height_integral <= height_integral + height_error;
-                END IF;
-                i_term := (to_integer(signed(height_ki)) * height_integral) / KI_SCALE;
-
-                -- Calculate D term
-                height_derivative <= height_error - height_prev_error;
-                d_term := (to_integer(signed(height_kd)) * height_derivative) / KD_SCALE;
-                height_prev_error <= height_error;
-
-                -- Sum PID terms
-                height_output_temp <= p_term + i_term + d_term;
-
-                -- Saturate output
-                IF height_output_temp > OUTPUT_SCALE THEN
-                    height_output <= std_logic_vector(to_signed(OUTPUT_SCALE, data_width));
-                ELSIF height_output_temp < 0 THEN
-                    height_output <= (others => '0');
-                ELSE
-                    height_output <= std_logic_vector(to_signed(height_output_temp, data_width));
-                END IF;
-
-                values_ready <= '1';
+                values_ready <= roll_en or pitch_en or yaw_en or height_en;
             END IF;
         END IF;
     END PROCESS;
-
-    -- Similar processes for roll, pitch and yaw control...
 
 END Behavioral;

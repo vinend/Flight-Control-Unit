@@ -1,102 +1,160 @@
+# Compile of AnalogConverter.vhd was successful.
+# Compile of error_register.vhd was successful.
+# Compile of Integration.vhd was successful.
+# Compile of PID_Controller.vhd was successful.
+# Compile of trigger.vhd was successful.
+# Compile of PID_Controller_tb.vhd was successful with warnings.
 # Compile of MotorPIDControl.vhd was successful.
+# Compile of PWMGeneratorMOTOR.vhd was successful.
 # Compile of MotorPIDControl_tb.vhd was successful.
-# 2 compiles, 0 failed with no errors.
+# 9 compiles, 0 failed with no errors.
 vsim -gui work.motorpidcontrol_tb
 # vsim -gui work.motorpidcontrol_tb 
-# Start time: 20:55:30 on Dec 06,2024
+# Start time: 19:14:01 on Dec 07,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.motorpidcontrol_tb(behavioral)
 # Loading work.motorpidcontrol(behavioral)
-# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/roll_output(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/pitch_output(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/yaw_output(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# Loading work.pid_controller(behavioral)
+# ** Warning: (vsim-3473) Component instance "UUT1 : error_flip_flop" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT2 : Triggered" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# Loading work.pwm_generator(behavioral)
+# Loading work.analogconverter(behavioral)
+# ** Warning: (vsim-3473) Component instance "XADC_inst : XADC" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid/UUT4 File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
+# ** Warning: (vsim-3473) Component instance "UUT5 : average" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/roll_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT1 : error_flip_flop" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/pitch_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT2 : Triggered" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/pitch_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "XADC_inst : XADC" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/pitch_pid/UUT4 File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
+# ** Warning: (vsim-3473) Component instance "UUT5 : average" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/pitch_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT1 : error_flip_flop" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/yaw_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT2 : Triggered" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/yaw_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "XADC_inst : XADC" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/yaw_pid/UUT4 File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
+# ** Warning: (vsim-3473) Component instance "UUT5 : average" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/yaw_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT1 : error_flip_flop" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/height_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "UUT2 : Triggered" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/height_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-3473) Component instance "XADC_inst : XADC" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/height_pid/UUT4 File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/AnalogConverter.vhd
+# ** Warning: (vsim-3473) Component instance "UUT5 : average" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /motorpidcontrol_tb/UUT/height_pid File: C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE/PID_Controller/PID_Controller.vhd
+# ** Warning: (vsim-8684) No drivers exist on out port /motorpidcontrol_tb/UUT/roll_pid/UUT4/conv_done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /motorpidcontrol_tb/UUT/roll_pid/conversion_complete.
+# ** Warning: (vsim-8684) No drivers exist on out port /motorpidcontrol_tb/UUT/pitch_pid/UUT4/conv_done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /motorpidcontrol_tb/UUT/pitch_pid/conversion_complete.
+# ** Warning: (vsim-8684) No drivers exist on out port /motorpidcontrol_tb/UUT/yaw_pid/UUT4/conv_done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /motorpidcontrol_tb/UUT/yaw_pid/conversion_complete.
+# ** Warning: (vsim-8684) No drivers exist on out port /motorpidcontrol_tb/UUT/height_pid/UUT4/conv_done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /motorpidcontrol_tb/UUT/height_pid/conversion_complete.
 # WARNING: No extended dataflow license exists
 add wave -position insertpoint sim:/motorpidcontrol_tb/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: vinen  Hostname: VINMACHINE  ProcessID: 15276
-#           Attempting to use alternate WLF file "./wlftjsk4bs".
+#           Attempting to use alternate WLF file "./wlft11qv07".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjsk4bs
-vsim -gui work.motorpidcontrol_tb
-# End time: 20:55:49 on Dec 06,2024, Elapsed time: 0:00:19
-# Errors: 0, Warnings: 7
-# vsim -gui work.motorpidcontrol_tb 
-# Start time: 20:55:49 on Dec 06,2024
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.motorpidcontrol_tb(behavioral)
-# Loading work.motorpidcontrol(behavioral)
-# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/roll_output(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/pitch_output(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /motorpidcontrol_tb/UUT/yaw_output(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# WARNING: No extended dataflow license exists
-add wave -position insertpoint sim:/motorpidcontrol_tb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: vinen  Hostname: VINMACHINE  ProcessID: 15276
-#           Attempting to use alternate WLF file "./wlft8xmb8h".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8xmb8h
+#           Using alternate file: ./wlft11qv07
 run -all
-# ** Note: === Test Case: Hover Height Control ===
+# ** Note: === Test Case: Hover ===
 #    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Setpoint: 2048
+# ** Note: Roll - SP:2048 Act:1024 Out:890
 #    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Actual: 1024
+# ** Note: Pitch - SP:2048 Act:1024 Out:0
 #    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Output: 0
+# ** Note: Yaw - SP:2048 Act:1024 Out:0
+#    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:2048 Act:1024 Out:890
 #    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
 # ** Note: Values Ready: '1'
 #    Time: 1200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Forward Tilt ===
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Roll - SP:2048 Act:1024 Out:1402
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Pitch - SP:2560 Act:1024 Out:0
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Yaw - SP:2048 Act:1024 Out:0
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:2048 Act:1024 Out:1402
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Right Roll ===
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Roll - SP:2560 Act:1024 Out:2137
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Pitch - SP:2560 Act:1024 Out:0
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Yaw - SP:2048 Act:1024 Out:0
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:2048 Act:1024 Out:1914
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Yaw Turn ===
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Roll - SP:2560 Act:1024 Out:2777
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Pitch - SP:2560 Act:1024 Out:0
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Yaw - SP:3072 Act:1024 Out:0
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:2048 Act:1024 Out:2426
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Values Ready: '1'
+#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
 # ** Note: === Test Case: Ascending ===
-#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Setpoint: 3072
-#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Actual: 2048
-#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Output: 1228
-#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+#    Time: 5200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Roll - SP:2560 Act:1024 Out:3417
+#    Time: 5200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Pitch - SP:2560 Act:1024 Out:0
+#    Time: 5200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Yaw - SP:3072 Act:1024 Out:0
+#    Time: 5200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:3072 Act:1024 Out:3383
+#    Time: 5200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
 # ** Note: Values Ready: '1'
-#    Time: 2200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: === Test Case: Descending ===
-#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Setpoint: 1024
-#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Actual: 2048
-#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Output: 1638
-#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+#    Time: 5200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Return to Center ===
+#    Time: 6200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Roll - SP:2048 Act:1024 Out:3834
+#    Time: 6200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Pitch - SP:2048 Act:1024 Out:0
+#    Time: 6200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Yaw - SP:2048 Act:1024 Out:0
+#    Time: 6200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:2048 Act:1024 Out:3706
+#    Time: 6200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
 # ** Note: Values Ready: '1'
-#    Time: 3200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: === Test Case: Maximum Height ===
-#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Setpoint: 4000
-#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Actual: 0
-#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Output: 0
-#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Values Ready: '1'
-#    Time: 4200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: === Test Case: Emergency Landing ===
-#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Setpoint: 0
-#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Actual: 0
-#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
-# ** Note: Height Output: 0
-#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+#    Time: 6200 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: === Test Case: Emergency Stop ===
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Roll - SP:0 Act:0 Out:3834
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Pitch - SP:0 Act:0 Out:0
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Yaw - SP:0 Act:0 Out:0
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+# ** Note: Height - SP:0 Act:0 Out:3706
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
 # ** Note: Values Ready: '0'
-#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
 # ** Note: === Test Complete ===
-#    Time: 4400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
+#    Time: 6400 ns  Iteration: 0  Instance: /motorpidcontrol_tb
