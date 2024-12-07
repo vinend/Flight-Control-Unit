@@ -40,8 +40,17 @@ ARCHITECTURE Behavioral OF MainControlUnit IS
     SIGNAL pid_ready : STD_LOGIC;
     SIGNAL roll_out, pitch_out, yaw_out, height_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
     
+    -- Extended sensor signals
+    SIGNAL roll_actual_ext : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL pitch_actual_ext : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL yaw_actual_ext : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL height_actual_ext : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    
     -- PWM duty cycles
     SIGNAL motor1_duty, motor2_duty, motor3_duty, motor4_duty : STD_LOGIC_VECTOR(11 DOWNTO 0);
+    
+    -- Internal signals to mirror PWM values
+    SIGNAL roll_sensor_internal, pitch_sensor_internal, yaw_sensor_internal, height_sensor_internal : STD_LOGIC_VECTOR(7 DOWNTO 0);
     
     -- Component declarations
     COMPONENT MotorPIDControl IS
@@ -96,6 +105,12 @@ ARCHITECTURE Behavioral OF MainControlUnit IS
     SIGNAL height_kp, height_ki, height_kd : STD_LOGIC_VECTOR(15 DOWNTO 0) := x"0014";
 
 BEGIN
+    -- Extend sensor inputs to 32 bits
+    roll_actual_ext <= x"000000" & roll_sensor;
+    pitch_actual_ext <= x"000000" & pitch_sensor;
+    yaw_actual_ext <= x"000000" & yaw_sensor;
+    height_actual_ext <= x"000000" & height_sensor;
+
     -- PID Controller instance
     pid_control : MotorPIDControl
     PORT MAP (
@@ -105,25 +120,25 @@ BEGIN
         roll_ki => roll_ki,
         roll_kd => roll_kd,
         roll_setpoint => roll_setpoint,
-        roll_actual => x"000000" & roll_sensor,
+        roll_actual => roll_actual_ext,  -- Use extended signal
         roll_output => roll_out,
         pitch_kp => pitch_kp,
         pitch_ki => pitch_ki,
         pitch_kd => pitch_kd,
         pitch_setpoint => pitch_setpoint,
-        pitch_actual => x"000000" & pitch_sensor,
+        pitch_actual => pitch_actual_ext,  -- Use extended signal
         pitch_output => pitch_out,
         yaw_kp => yaw_kp,
         yaw_ki => yaw_ki,
         yaw_kd => yaw_kd,
         yaw_setpoint => yaw_setpoint,
-        yaw_actual => x"000000" & yaw_sensor,
+        yaw_actual => yaw_actual_ext,  -- Use extended signal
         yaw_output => yaw_out,
         height_kp => height_kp,
         height_ki => height_ki,
         height_kd => height_kd,
         height_setpoint => height_setpoint,
-        height_actual => x"000000" & height_sensor,
+        height_actual => height_actual_ext,  -- Use extended signal
         height_output => height_out,
         values_ready => pid_ready
     );
@@ -226,9 +241,15 @@ BEGIN
                 "010" WHEN current_state = HOVER ELSE
                 "011" WHEN current_state = CRUISE ELSE
                 "100" WHEN current_state = LAND ELSE
-                "111";
+                "111";  
                 
     -- Set ready signal
     ready <= pid_ready WHEN current_state /= IDLE ELSE '0';
+
+    -- Mirror PWM values to internal signals
+    roll_sensor_internal <= motor1_duty(7 DOWNTO 0);
+    pitch_sensor_internal <= motor2_duty(7 DOWNTO 0);
+    yaw_sensor_internal <= motor3_duty(7 DOWNTO 0);
+    height_sensor_internal <= motor4_duty(7 DOWNTO 0);
 
 END Behavioral;
