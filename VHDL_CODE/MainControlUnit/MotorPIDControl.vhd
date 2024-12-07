@@ -96,9 +96,9 @@ BEGIN
     -- Pitch axis PID controller
     pitch_pid : PID_Controller
     PORT MAP (
-        kp_sw => pitch_kp(15),
-        ki_sw => pitch_ki(15),
-        kd_sw => pitch_kd(15),
+        kp_sw => pitch_en,
+        ki_sw => pitch_en,
+        kd_sw => pitch_en,
         SetVal => pitch_setpoint(11 DOWNTO 0),
         PWM_PIN => open,
         ADC => pitch_actual(7 DOWNTO 0),
@@ -108,14 +108,14 @@ BEGIN
         anode_activate => open,
         led_out => open
     );
-    pitch_output <= x"00000" & pitch_output_buf;
+    pitch_output <= x"00000" & pitch_output_buf when pitch_en = '1' else (others => '0');
 
     -- Yaw axis PID controller
     yaw_pid : PID_Controller
     PORT MAP (
-        kp_sw => yaw_kp(15),
-        ki_sw => yaw_ki(15),
-        kd_sw => yaw_kd(15),
+        kp_sw => yaw_en,
+        ki_sw => yaw_en,
+        kd_sw => yaw_en,
         SetVal => yaw_setpoint(11 DOWNTO 0),
         PWM_PIN => open,
         ADC => yaw_actual(7 DOWNTO 0),
@@ -125,7 +125,7 @@ BEGIN
         anode_activate => open,
         led_out => open
     );
-    yaw_output <= x"00000" & yaw_output_buf;
+    yaw_output <= x"00000" & yaw_output_buf when yaw_en = '1' else (others => '0');
 
     -- Height axis PID controller
     height_pid : PID_Controller

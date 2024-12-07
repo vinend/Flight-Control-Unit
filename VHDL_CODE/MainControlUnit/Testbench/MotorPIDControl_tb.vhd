@@ -84,7 +84,7 @@ ARCHITECTURE Behavioral OF MotorPIDControl_tb IS
                " Out:" & integer'image(to_integer(unsigned(yaw_out))) severity note;
         report "Height - SP:" & integer'image(height_sp) & 
                " Act:" & integer'image(height_act) & 
-               " Out:" & integer'image(to_integer(unsigned(height_output))) severity note;
+               " Out:" & integer'image(to_integer(unsigned(height_out))) severity note;
         report "Values Ready: " & std_logic'image(values_ready) severity note;
     END PROCEDURE;
 
