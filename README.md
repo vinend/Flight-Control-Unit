@@ -1,4 +1,3 @@
-Berikut adalah README yang telah diperbarui dalam Bahasa Indonesia sesuai dengan permintaan Anda:
 
 ---
 
