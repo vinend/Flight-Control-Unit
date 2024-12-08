@@ -1,36 +1,42 @@
+Berikut adalah README yang telah diperbarui dalam Bahasa Indonesia sesuai dengan permintaan Anda:
 
-# ✈️ Flight Control Unit (FCU) - Final Project in Digital System Design
+---
 
-Welcome to the **Flight Control Unit** project repository! This project focuses on designing a flight control system for small Unmanned Aerial Vehicles (UAVs) using VHDL. It includes the implementation of a PID controller and other associated modules for stabilization and navigation of the UAV.
+# ✈️ Flight Control Unit (FCU) - Proyek Akhir Desain Sistem Digital
 
-## 🚀 Overview
+Selamat datang di repositori proyek **Flight Control Unit**! Proyek ini berfokus pada perancangan sistem kontrol penerbangan untuk UAV kecil menggunakan VHDL. Proyek ini mencakup implementasi PID controller dan modul-modul terkait untuk stabilisasi dan navigasi UAV.
 
-The **Flight Control Unit (FCU)** serves as the central nervous system for the UAV, receiving input from the computer or microcontroller to control various actuators such as motors and servos. This enables the UAV to achieve the desired trajectory, altitude, and speed. 
+## 🚀 Deskripsi Proyek
 
-The primary component of the FCU is the **PID Controller Module**, which uses the Proportional-Integral-Derivative (PID) algorithm to ensure stable flight. The PID controller adjusts motor speeds to maintain the desired position or velocity, correcting for any errors in real-time.
+**Flight Control Unit (FCU)** berfungsi sebagai sistem saraf pusat bagi UAV, menerima input dari komputer atau mikrokontroler untuk mengendalikan berbagai aktuator seperti motor dan servo. Hal ini memungkinkan UAV mencapai trajektori, ketinggian, dan kecepatan yang diinginkan.
 
-The FCU also includes multiple **State Machines** to handle different flight phases, including:
-- **Idle:** The UAV is in a standby mode.
-- **Takeoff:** The UAV starts its ascent.
-- **Hover:** The UAV maintains a stable position at a fixed altitude.
-- **Cruise:** The UAV flies at a constant altitude and speed.
-- **Land:** The UAV descends and prepares to land safely.
+Komponen utama dari FCU adalah **Modul PID Controller**, yang menggunakan algoritma Proportional-Integral-Derivative (PID) untuk memastikan penerbangan yang stabil. PID controller menyesuaikan kecepatan motor untuk mempertahankan posisi atau kecepatan yang diinginkan, mengoreksi kesalahan secara real-time.
 
-The system also integrates **Signal Processing Modules** to process data from various sensors, such as **LiDAR**, which measures altitude and provides real-time feedback to the control system. Based on this data, control signals are generated to adjust the UAV's flight path.
+Sistem ini juga mengintegrasikan **Modul Pemrosesan Sinyal** untuk memproses data dari berbagai sensor, seperti **LiDAR**, yang mengukur ketinggian dan memberikan umpan balik waktu nyata ke sistem kontrol. Berdasarkan data ini, sinyal kontrol dihasilkan untuk menyesuaikan jalur penerbangan UAV.
 
-### Key Modules and Features:
-1. **PID Controller Module**: Implements the PID logic for flight stability and navigation.
-2. **State Machines**: Manage transitions between different flight phases, such as Idle, Takeoff, Hover, Cruise, and Land.
-3. **Sensor Processing Unit**: Receives and processes sensor data, such as LiDAR, to determine the UAV’s altitude and assist in maintaining stable flight.
-4. **Actuator Control Module**: Sends PWM (Pulse Width Modulation) signals to control the motors, adjusting speed based on the PID output or control commands.
-5. **Data Communication**: The FCU communicates with the flight control system through simple communication protocols such as SPI Slave or UART.
+### Modul dan Fitur Utama:
+1. **Modul PID Controller**: Mengimplementasikan logika PID untuk stabilitas penerbangan dan navigasi.
+2. **State Machines**: Mengelola transisi antar fase penerbangan.
+3. **Unit Pemrosesan Sensor**: Menerima dan memproses data sensor, seperti LiDAR, untuk menentukan ketinggian UAV dan membantu menjaga penerbangan yang stabil.
+4. **Modul Kontrol Aktuator**: Mengirimkan sinyal PWM (Pulse Width Modulation) untuk mengontrol motor, menyesuaikan kecepatan berdasarkan output PID atau perintah kontrol.
+5. **Komunikasi Data**: FCU berkomunikasi dengan sistem kontrol penerbangan melalui protokol komunikasi sederhana seperti SPI Slave atau UART.
 
-The goal of this project is to create a highly responsive and stable flight control system capable of autonomously controlling the UAV's flight dynamics.
+Tujuan dari proyek ini adalah untuk membuat sistem kontrol penerbangan yang sangat responsif dan stabil yang mampu mengendalikan dinamika penerbangan UAV secara otonom.
 
-## Group Project Members
+## Anggota Kelompok Proyek
 1. **Andi Muhammad Alvin Farhansyah** - 2306161933 👑💯
 2. **Ibnu Zaky Fauzi** - 2306161870
 3. **Samih Bassam** - 2306250623
 4. **Daffa Bagus Dhinanto** - 2306250756
 
-## 🗂️ Project Structure
+Kelompok: **PA22**
+
+## 🗂️ Struktur Proyek
+- **/src**: Berisi file VHDL untuk implementasi PID Controller, state machines, dan modul lainnya.
+- **/testbenches**: Berisi file testbench untuk menguji masing-masing modul.
+- **/docs**: Dokumentasi proyek, termasuk diagram, flowchart, dan laporan.
+- **/simulations**: Hasil simulasi dan output untuk analisis lebih lanjut.
+
+---
+
+Silakan menambahkan atau mengubah detail sesuai dengan struktur proyek Anda jika diperlukan.
