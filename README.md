@@ -38,5 +38,3 @@ Kelompok: **PA22**
 - **/simulations**: Hasil simulasi dan output untuk analisis lebih lanjut.
 
 ---
-
-Silakan menambahkan atau mengubah detail sesuai dengan struktur proyek Anda jika diperlukan.
