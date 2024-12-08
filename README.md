@@ -19,7 +19,6 @@ Sistem ini juga mengintegrasikan **Modul Pemrosesan Sinyal** untuk memproses dat
 2. **State Machines**: Mengelola transisi antar fase penerbangan.
 3. **Unit Pemrosesan Sensor**: Menerima dan memproses data sensor, seperti LiDAR, untuk menentukan ketinggian UAV dan membantu menjaga penerbangan yang stabil.
 4. **Modul Kontrol Aktuator**: Mengirimkan sinyal PWM (Pulse Width Modulation) untuk mengontrol motor, menyesuaikan kecepatan berdasarkan output PID atau perintah kontrol.
-5. **Komunikasi Data**: FCU berkomunikasi dengan sistem kontrol penerbangan melalui protokol komunikasi sederhana seperti SPI Slave atau UART.
 
 Tujuan dari proyek ini adalah untuk membuat sistem kontrol penerbangan yang sangat responsif dan stabil yang mampu mengendalikan dinamika penerbangan UAV secara otonom.
 
