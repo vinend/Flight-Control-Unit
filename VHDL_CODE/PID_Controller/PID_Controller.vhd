@@ -50,7 +50,7 @@ ARCHITECTURE Behavioral OF PID_Controller IS
         );
     END COMPONENT;
 
-    COMPONENT Triggered
+    COMPONENT trigger
         PORT (
             adc_trigger_out : OUT STD_LOGIC;
             clock_in : IN STD_LOGIC
@@ -75,7 +75,7 @@ ARCHITECTURE Behavioral OF PID_Controller IS
         );
     END COMPONENT;
 
-    COMPONENT error_flip_flop
+    COMPONENT error_register
         PORT (
             Error : IN std_logic_vector(31 DOWNTO 0);
             old_error : OUT std_logic_vector(31 DOWNTO 0);
@@ -85,14 +85,14 @@ ARCHITECTURE Behavioral OF PID_Controller IS
 
 BEGIN
     -- Component instantiations
-    UUT1 : error_flip_flop
+    UUT1 : error_register
         PORT MAP (
             Error => std_error,
             old_error => std_old_error,
             trigger => integration_trigger
         );
 
-    UUT2 : Triggered
+    UUT2 : trigger
         PORT MAP (
             adc_trigger_out => adc_trigger_buffer,
             clock_in => clk

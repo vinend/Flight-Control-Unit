@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sun Dec  8 22:14:43 2024
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Revision Name : FlightControlUnit
+Top-level Entity Name : FlightControlUnit
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 1203
+Total pins : 91
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 16
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

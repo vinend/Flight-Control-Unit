@@ -1,0 +1,373 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "motor1_pwm",
+					"strict" : false
+				},
+				{
+					"name" : "motor1_pwm_n",
+					"strict" : false
+				},
+				{
+					"name" : "motor2_pwm",
+					"strict" : false
+				},
+				{
+					"name" : "motor2_pwm_n",
+					"strict" : false
+				},
+				{
+					"name" : "motor3_pwm",
+					"strict" : false
+				},
+				{
+					"name" : "motor3_pwm_n",
+					"strict" : false
+				},
+				{
+					"name" : "motor4_pwm",
+					"strict" : false
+				},
+				{
+					"name" : "motor4_pwm_n",
+					"strict" : false
+				},
+				{
+					"name" : "system_ready",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[11]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[11]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[11]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[11]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[10]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[9]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[5]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[6]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[7]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[8]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[0]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[1]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[2]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[3]",
+					"strict" : false
+				},
+				{
+					"name" : "height_setpoint[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[10]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[10]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[9]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[4]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[5]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[7]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[8]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[0]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[1]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[2]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[3]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_setpoint[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_setpoint[4]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[9]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[4]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[2]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[1]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[0]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[6]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[3]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[8]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[7]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_setpoint[5]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[5]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[6]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[7]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "height_sensor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[6]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[7]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "yaw_sensor[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch_sensor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[5]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[7]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[6]",
+					"strict" : false
+				},
+				{
+					"name" : "roll_sensor[4]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
