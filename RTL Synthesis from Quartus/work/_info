@@ -1,0 +1,441 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/VHDL_CODE
+Eanalogconverter
+Z0 w1733670543
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+Z4 dC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus
+Z5 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/AnalogConverter.vhd
+Z6 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/AnalogConverter.vhd
+l0
+L5 1
+VjUS_TMVC=iXX<ZCg>m@EK2
+!s100 UH8G3b2`NOlG2J4Az8na]0
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1733889763
+!i10b 1
+Z9 !s108 1733889762.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/AnalogConverter.vhd|
+Z11 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/AnalogConverter.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 15 analogconverter 0 22 jUS_TMVC=iXX<ZCg>m@EK2
+!i122 0
+l20
+L15 32
+VnAdI[C0[KV5FhXSdXW>?I2
+!s100 I0o?eP9Bmb8Y8[mC:Wm:m0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eerror_register
+Z14 w1733315020
+R1
+R2
+R3
+!i122 1
+R4
+Z15 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/error_register.vhd
+Z16 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/error_register.vhd
+l0
+L5 1
+V@j0acRGooWlFa9ocW3?Qf3
+!s100 hU`zjBF:nN?M@1o8MQU3V0
+R7
+32
+R8
+!i10b 1
+Z17 !s108 1733889763.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/error_register.vhd|
+Z19 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/error_register.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 14 error_register 0 22 @j0acRGooWlFa9ocW3?Qf3
+!i122 1
+l14
+L13 9
+VH06L^D]?Z`mC_5E[[7ESP3
+!s100 <dZdgKck1k9Uf5aUCl88^2
+R7
+32
+R8
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R12
+R13
+Eflightcontrolunit
+Z20 w1733591581
+R1
+R2
+R3
+!i122 2
+R4
+Z21 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/FlightControlUnit.vhd
+Z22 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/FlightControlUnit.vhd
+l0
+L5 1
+VmVMCOkRj8EPe?eG7`Y3TU2
+!s100 dnOBl:88__iIFZhIIH6E]2
+R7
+32
+R8
+!i10b 1
+R17
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/FlightControlUnit.vhd|
+Z24 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/FlightControlUnit.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 17 flightcontrolunit 0 22 mVMCOkRj8EPe?eG7`Y3TU2
+!i122 2
+l126
+L39 179
+VFZU5n[3XLRjizOZi85en:2
+!s100 [XF[7mUj5<D47YWUz9Iel1
+R7
+32
+R8
+!i10b 1
+R17
+R23
+R24
+!i113 1
+R12
+R13
+Eintegration
+Z25 w1733484944
+R1
+R2
+R3
+!i122 3
+R4
+Z26 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/Integration.vhd
+Z27 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/Integration.vhd
+l0
+L5 1
+VCz_@96o7[EMkmh3=:A]LT1
+!s100 LddEKBNgB@GSWHb3[T:JH0
+R7
+32
+R8
+!i10b 1
+R17
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/Integration.vhd|
+Z29 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/Integration.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 11 integration 0 22 Cz_@96o7[EMkmh3=:A]LT1
+!i122 3
+l32
+L20 50
+Vo@eKPL1m1JPfMfhj@_Zb?2
+!s100 4o9X5gM`n12JG3`m@DZo>0
+R7
+32
+R8
+!i10b 1
+R17
+R28
+R29
+!i113 1
+R12
+R13
+Emotorpidcontrol
+Z30 w1733586503
+R1
+R2
+R3
+!i122 4
+R4
+Z31 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/MotorPIDControl.vhd
+Z32 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/MotorPIDControl.vhd
+l0
+L5 1
+V]76O4E4TY5ABlB0375Yaa1
+!s100 aIYeMG1a_K_4zUezFdPk<1
+R7
+32
+R8
+!i10b 1
+R17
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/MotorPIDControl.vhd|
+Z34 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/MotorPIDControl.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 15 motorpidcontrol 0 22 ]76O4E4TY5ABlB0375Yaa1
+!i122 4
+l72
+L38 122
+V`lfb2DAJTSZK>fn?9lo`A0
+!s100 4;VVM`[GW[lIkKB`8Hk1l3
+R7
+32
+R8
+!i10b 1
+R17
+R33
+R34
+!i113 1
+R12
+R13
+Epid_controller
+Z35 w1733670867
+R1
+R2
+R3
+!i122 5
+R4
+Z36 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PID_Controller.vhd
+Z37 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PID_Controller.vhd
+l0
+L5 1
+V?:ZU674dh5eA^jl2ZNY:c1
+!s100 lNWU<ZQ]zSbAme>gX2U^W2
+R7
+32
+R8
+!i10b 1
+R17
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PID_Controller.vhd|
+Z39 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PID_Controller.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 14 pid_controller 0 22 ?:ZU674dh5eA^jl2ZNY:c1
+!i122 5
+l92
+L24 192
+VJz^bYUkLi9^YW=6T_XFg?1
+!s100 nKKoW8fh74nj^EVY=KZXB0
+R7
+32
+R8
+!i10b 1
+R17
+R38
+R39
+!i113 1
+R12
+R13
+Epwm_generator
+Z40 w1733315602
+R1
+R2
+R3
+!i122 6
+R4
+Z41 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWM_Generator.vhd
+Z42 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWM_Generator.vhd
+l0
+L5 1
+Vk2?UZllWjf:lJFS6SfAeG3
+!s100 iab4oAY4K:OCGbBV4^afb0
+R7
+32
+R8
+!i10b 1
+R17
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWM_Generator.vhd|
+Z44 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWM_Generator.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 13 pwm_generator 0 22 k2?UZllWjf:lJFS6SfAeG3
+!i122 6
+l24
+L18 30
+V?<HA0>25C_ee=1]G2AZ?n3
+!s100 =MoFfJlILzChDH=H]GIk02
+R7
+32
+R8
+!i10b 1
+R17
+R43
+R44
+!i113 1
+R12
+R13
+Epwmgeneratormotor
+Z45 w1733471528
+R1
+R2
+R3
+!i122 7
+R4
+Z46 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWMGeneratorMOTOR.vhd
+Z47 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWMGeneratorMOTOR.vhd
+l0
+L5 1
+VnVcRC6[:K_DJV;gO6_1Cn3
+!s100 E=e7eDZnK_LEzIUP<T^Oc2
+R7
+32
+R8
+!i10b 1
+R17
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWMGeneratorMOTOR.vhd|
+Z49 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWMGeneratorMOTOR.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 17 pwmgeneratormotor 0 22 nVcRC6[:K_DJV;gO6_1Cn3
+!i122 7
+l55
+L38 64
+V:JiiT:lM5Aek935GQcEgR3
+!s100 Kk8ijX0T^Hm8^;ZcEl^Ok2
+R7
+32
+R8
+!i10b 1
+R17
+R48
+R49
+!i113 1
+R12
+R13
+Etb_pid_controller
+Z50 w1733889881
+R1
+R2
+R3
+!i122 9
+R4
+Z51 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd
+Z52 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd
+l0
+L5 1
+Vc6TCHZcDSA;b^PKKFFjki1
+!s100 S4zZmEeZV=zenWG9AEbZN2
+R7
+32
+Z53 !s110 1733889974
+!i10b 1
+Z54 !s108 1733889974.000000
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd|
+!s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+R3
+DEx4 work 17 tb_pid_controller 0 22 c6TCHZcDSA;b^PKKFFjki1
+!i122 9
+l46
+L8 93
+VUT_nSz`nM@KX@1JJjne>b1
+!s100 gBbkbZO]9I^;V8ENWTQU:3
+R7
+32
+R53
+!i10b 1
+R54
+R55
+Z56 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd|
+!i113 1
+R12
+R13
+Etrigger
+Z57 w1733662152
+R1
+R2
+R3
+!i122 8
+R4
+Z58 8C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/trigger.vhd
+Z59 FC:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/trigger.vhd
+l0
+L5 1
+Vej[RjO89OR[MU?c;fF85j1
+!s100 0^EHJci_dJm_IkIJogbiX1
+R7
+32
+R8
+!i10b 1
+R17
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/trigger.vhd|
+Z61 !s107 C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/trigger.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 7 trigger 0 22 ej[RjO89OR[MU?c;fF85j1
+!i122 8
+l25
+L12 43
+VSKkgW_h:i=mmVlng?a=Ed1
+!s100 b19H:f@I;[@8iTmIH>QGO2
+R7
+32
+R8
+!i10b 1
+R17
+R60
+R61
+!i113 1
+R12
+R13

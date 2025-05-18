@@ -1,0 +1,91 @@
+{C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/trigger.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/trigger.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity trigger
+-- Compiling architecture Behavioral of trigger
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWMGeneratorMOTOR.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWMGeneratorMOTOR.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PWMGeneratorMotor
+-- Compiling architecture Behavioral of PWMGeneratorMotor
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PID_Controller.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PID_Controller.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PID_Controller
+-- Compiling architecture Behavioral of PID_Controller
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/Integration.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/Integration.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Integration
+-- Compiling architecture Behavioral of Integration
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/tb_PID_Controller.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_PID_Controller
+-- Compiling architecture behavior of tb_PID_Controller
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWM_Generator.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/PWM_Generator.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PWM_Generator
+-- Compiling architecture Behavioral of PWM_Generator
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/error_register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/error_register.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity error_register
+-- Compiling architecture Behavioral of error_register
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/AnalogConverter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/AnalogConverter.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity AnalogConverter
+-- Compiling architecture Behavioral of AnalogConverter
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/MotorPIDControl.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/MotorPIDControl.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MotorPIDControl
+-- Compiling architecture Behavioral of MotorPIDControl
+
+} {} {}} {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/FlightControlUnit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/vinen/Documents/File Semester/Semester 3/PSD/PSD-Praktikum/FinalProject/FlightControlUnit_ProyekAkhirPSD/RTL Synthesis from Quartus/FlightControlUnit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity FlightControlUnit
+-- Compiling architecture Behavioral of FlightControlUnit
+
+} {} {}}
